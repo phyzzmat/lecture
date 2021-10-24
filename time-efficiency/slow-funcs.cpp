@@ -23,36 +23,36 @@ double dist(Point A, Point B) {
 }
 
 double dist2(Point A, Point B) {
-    return (A.x - B.x) * (A.x - B.x) + (A.y - B.y) * (A.y - B.y)
+    return (A.x - B.x) * (A.x - B.x) + (A.y - B.y) * (A.y - B.y);
 }
 
 void slow_point_check() {
     double threshold;
     cin >> threshold;
     int cnt = 0;
-    vector<Point> points = generate_points(10000);
+    vector<Point> points = generate_points(30000);
     for (int i = 0; i < points.size(); i++) {
         for (int j = i + 1; j < points.size(); j++) {
             if (dist(points[i], points[j]) < threshold) cnt++;
         }
     }
+    cout << cnt;
 }
 
 void fast_point_check() {
     double threshold;
     cin >> threshold;
     int cnt = 0;
-    vector<Point> points = generate_points(10000);
+    vector<Point> points = generate_points(30000);
     for (int i = 0; i < points.size(); i++) {
         for (int j = i + 1; j < points.size(); j++) {
             if (dist2(points[i], points[j]) < threshold * threshold) cnt++;
         }
     }
+    cout << cnt;
 }
 
-int dp[]
-
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    // fast_point_check();
+    // slow_point_check();
 }
